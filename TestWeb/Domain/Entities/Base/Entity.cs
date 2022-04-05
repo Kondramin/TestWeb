@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using TestWeb.Interfaces.Entities;
 
 namespace TestWeb.Domain.Entities.Base
 {
-    public abstract class Entity
+    public abstract class Entity : IEntity
     {
         [Required]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }
