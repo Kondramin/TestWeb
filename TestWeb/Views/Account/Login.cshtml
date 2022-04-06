@@ -1,6 +1,6 @@
 ﻿@model LoginViewModel
 
-<div>
+<div class="div-login">
     <h1>Вход в личный кабинет</h1>
     <form asp-area="" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
         <div asp-validation-summary="All"></div>
@@ -11,7 +11,7 @@
         </div>
         <div>
             <label asp-for="Password"></label>
-            <input asp-for="Password" />
+            <input type="password" asp-for="Password" />
             <span asp-validation-for="Password"></span>
         </div>
         <div>
