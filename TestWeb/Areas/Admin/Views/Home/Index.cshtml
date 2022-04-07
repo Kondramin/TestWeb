@@ -7,6 +7,30 @@
 <div>
     <h1>@strTitle</h1>
     <biv>
-        
+        <h3>Пока не известно</h3>
+        <a asp-area="Admin" asp-controller="" asp-action="" asp-route-id="">ne naznacheno</a>
     </biv>
+    <div>
+        @if (Model.Any())
+        {
+            <div>
+                @foreach(News item in Model)
+                {
+                    <div>
+                        <a asp-area="Admin" asp-controller="" asp-action="" asp-route-id="@item.Id">редактировать</a>
+                        |
+                        <form style="display:inline-block;" id="form-@item.Id" asp-area="Admin" asp-controller="" asp-action="" method="post">
+                            <input type="hidden" name="id" value="@item.Id">
+                            <a href="#" onclick="document.getElementById('form-@item.Id').onsubmit();">не назначено</a>
+                        </form>
+                        |
+                        <a asp-area="" asp-controller="" asp-action="" asp-route-id="@item.Id">
+                            @($"{item.Title}")
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
 </div>

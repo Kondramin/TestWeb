@@ -9,6 +9,7 @@ namespace TestWeb.Models
         public string Login { get; set; }
 
         [Required]
+        [UIHint("password")]
         [Display(Name = "Пароль")]
         public string Password { get; set; }
 
